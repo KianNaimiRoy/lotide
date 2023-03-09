@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
   }
@@ -25,17 +25,17 @@ const assertArraysEqual = function (arr1, arr2) {
 const without = function (source, itemsToRemove) {
   let newString = []
   for (i = 0; i < source.length; i++) {
-    let anotherString 
-    for (j = 0; j < itemsToRemove.length; j++) {
-      if (source[i] !== itemsToRemove[j]) {
-        newString.push(source[i])
-        break
-      
-      }
-    }
+    if (!itemsToRemove.includes(source[i])) {
+      newString.push(source[i]);
   }
-  return newString
 }
+return newString
+};
+
+
+//if (!itemsToRemove.includes(source[i])) {
+// newString.push(source[i])}; //use this instead for inner loop
+
 
 console.log(without([1, 2, 3], [1])) // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
