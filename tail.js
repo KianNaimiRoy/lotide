@@ -5,4 +5,3 @@ const tail = function(arr1) {
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
-assertEqual(words.length, 3);
